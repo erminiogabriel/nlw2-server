@@ -1,13 +1,12 @@
 import express from 'express';
+import routes from './routes';
 
 const app = express();
 
-app.use(express.json);
+app.use(express.json());
 
-app.get('/', (request, response) => {
-  return response.json('opa')
-})
+app.use(routes);
 
-app.listen(3333, () => {
-  console.log('A aplicacao esta rodando em localhost:3333');
-});
+
+
+app.listen(3333);
